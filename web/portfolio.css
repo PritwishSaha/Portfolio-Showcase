@@ -1,0 +1,220 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0D1117, #161B22); /* deep black gradient */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem;
+  background: #161B22;
+  box-shadow: 0 2px 10px rgba(255, 223, 0, 0.2); /* yellow glow */
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #FFD300; /* bright yellow */
+  text-shadow: 0 0 10px #FFD300;
+}
+
+/* Profile Photo */
+.profile-photo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.profile-photo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #FFD300;
+  box-shadow: 0 0 15px #FFD300;
+}
+
+/* Download Button (Hidden by JS for all projects) */
+.download-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #00FFAA;
+  color: #0D1117;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.download-btn:hover {
+  background: #00cc88;
+  transform: scale(1.05);
+}
+
+/* Portfolio Grid */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Individual Portfolio Card */
+.portfolio {
+  background: #161B22;
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(255, 223, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 223, 0, 0.6);
+}
+
+/* Images and Videos with consistent size */
+.portfolio img,
+.portfolio video {
+  width: 100%;
+  height: 180px;       /* fixed height */
+  object-fit: cover;   /* maintain aspect ratio */
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(255, 223, 0, 0.3);
+}
+
+/* Buttons Section */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons Style */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #FFD300;
+  color: #0D1117;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background: #e6be00;
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+  background: #161B22;
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 3rem;
+  border-top: 2px solid #FFD300;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  color: #FFD300;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px #FFD300;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFD300;
+  color: #0D1117;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-btn:hover {
+  background: #e6be00;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .portfolio img,
+  .portfolio video {
+    height: 150px;
+  }
+
+  .profile-photo img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio img,
+  .portfolio video {
+    height: 120px;
+  }
+
+  .profile-photo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+}
+/* Floating emojis effect */
+.floating-emojis {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.floating-emojis .emoji {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.8;
+  animation: float 10s linear infinite;
+}
+
+.floating-emojis .emoji:nth-child(1) { left: 5%; animation-duration: 12s; }
+.floating-emojis .emoji:nth-child(2) { left: 20%; animation-duration: 15s; }
+.floating-emojis .emoji:nth-child(3) { left: 40%; animation-duration: 18s; }
+.floating-emojis .emoji:nth-child(4) { left: 60%; animation-duration: 14s; }
+.floating-emojis .emoji:nth-child(5) { left: 80%; animation-duration: 16s; }
+
+@keyframes float {
+  0% { transform: translateY(100vh) rotate(0deg); }
+  50% { transform: translateY(50vh) rotate(180deg); }
+  100% { transform: translateY(-10vh) rotate(360deg); }
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-profile">
+            <img src="your-avatar.jpg" alt="Your Avatar" class="profile-avatar">
+            <h3>Your Name</h3>
+            <p>Your Specialization</p>
+            <div class="contact-info">
+                <p><span><i class="fas fa-envelope"></i></span> youremail@gmail.com</p>
+                <p><span><i class="fas fa-phone-alt"></i></span> +91 9876543210</p>
+                <p><span><i class="fas fa-calendar-alt"></i></span> 1 January, 2000</p>
+                <p><span><i class="fas fa-map-marker-alt"></i></span> Your City, India</p>
+            </div>
+            <div class="social-links-sidebar">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="content">
+        <header class="main-header">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="about" class="about-section">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <p>I'm a Creative Director and UI/UX Designer from Pune, India, working in web development and print media. I enjoy taking complex problems and turning them into simple, beautiful, and intuitive designs.</p>
+                <p>My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add a personal touch to your product and make sure that it is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I have created web designs for many famous brand companies.</p>
+            </div>
+
+            <div class="what-i-do-grid">
+                <h3>What I'm Doing</h3>
+                <div class="service-item">
+                    <i class="fas fa-desktop"></i>
+                    <h4>Web Design</h4>
+                    <p>The most modern and high-quality design is made at a professional level.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-code"></i>
+                    <h4>Web Development</h4>
+                    <p>High-quality development of sites at the professional level.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Mobile Apps</h4>
+                    <p>Professional development of applications for iOS and Android.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-camera"></i>
+                    <h4>Photography</h4>
+                    <p>I make high-quality photos of any category at a professional level.</p>
+                </div>
+            </div>
+
+            <div class="testimonials">
+                <h3>Testimonials</h3>
+                <div class="testimonial-slider-container">
+                    <div class="testimonial-item">
+                        <img src="rohit-patil.jpg" alt="Rohit Patil">
+                        <p>Rohit Patil was hired to create a corporate identity. We were very pleased with the work.</p>
+                        <p class="testimonial-name">Rohit Patil</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="dilip-sinha.jpg" alt="Dilip Sinha">
+                        <p>Dilip Sinha was hired to create a corporate identity. We were very pleased with the work.</p>
+                        <p class="testimonial-name">Dilip Sinha</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="other-client.jpg" alt="Other Client">
+                        <p>Another great quote from a satisfied client about my work and professionalism.</p>
+                        <p class="testimonial-name">Another Client</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="resume-section">
+            <div class="section-title">
+                <h2>Resume</h2>
+            </div>
+            <div class="resume-content">
+                <div class="experience">
+                    <h3>Experience</h3>
+                    <div class="timeline-item">
+                        <h4>Creative Director</h4>
+                        <p class="timeline-period">2018 - Present</p>
+                        <p>A brief description of your role and responsibilities.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Art Director</h4>
+                        <p class="timeline-period">2016 - 2018</p>
+                        <p>A brief description of your role and responsibilities.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Web Designer</h4>
+                        <p class="timeline-period">2014 - 2016</p>
+                        <p>A brief description of your role and responsibilities.</p>
+                    </div>
+                </div>
+                <div class="skills-with-bars">
+                    <h3>My Skills</h3>
+                    <div class="skill-bar">
+                        <p>Web Design <span>90%</span></p>
+                        <div class="bar-container"><div class="bar" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <p>Graphic Design <span>75%</span></p>
+                        <div class="bar-container"><div class="bar" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <p>Branding <span>80%</span></p>
+                        <div class="bar-container"><div class="bar" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <p>WordPress <span>95%</span></p>
+                        <div class="bar-container"><div class="bar" style="width: 95%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <div class="section-title">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="harigurus.jpg" alt="Harigurus Project">
+                    <div class="portfolio-details">
+                        <h4>Harigurus</h4>
+                        <p>Event Booking</p>
+                        <p>Harigurus is a one-stop-shop for all Hindu religious, customs and traditional requirements. Built the complete site from scratch.</p>
+                        <div class="tech-tags">
+                            <span>ReactJs</span>
+                            <span>NodeJs</span>
+                            <span>MongoDB</span>
+                            <span>ExpressJS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="eazygrad.jpg" alt="EazyGrad Project">
+                    <div class="portfolio-details">
+                        <h4>EazyGrad</h4>
+                        <p>EdTech Startup</p>
+                        <p>Being a lead developer, revamped the site to a highly responsive and interactive website. Created new features and pages. Worked as a team with product manager and UI designer.</p>
+                        <div class="tech-tags">
+                            <span>ReactJs</span>
+                            <span>MongoDB</span>
+                            <span>ExpressJS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="portfolio-item">
+                    <img src="web-dev-english.jpg" alt="Web Dev English Project">
+                    <div class="portfolio-details">
+                        <h4>Web Dev English</h4>
+                        <p>Coaching and Consulting</p>
+                        <p>US-based English Coach's website for guiding learners. Improved existing look and added new features and sections.</p>
+                        <div class="tech-tags">
+                            <span>ReactJs</span>
+                            <span>JavaScript</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="section-title">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-content">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15124.789182393278!2d73.80436855!3d18.61868465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e3a6c56173%3A0xc3f6d77f4b810d2!2sPimpri%2C%20Pimpri-Chinchwad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1628080000000!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="full-name" placeholder="Full name" required>
+                        <input type="email" id="email-address" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="your-message" rows="5" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="send-message-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

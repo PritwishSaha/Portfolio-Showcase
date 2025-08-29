@@ -1,0 +1,78 @@
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// 3D Spiral Tunnel Background
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const centerX = canvas.width / 2;
+const centerY = canvas.height / 2;
+let tunnelParticles = [];
+
+const numParticles = 600;
+const depth = 800;
+
+class Particle {
+    constructor() {
+        this.reset();
+    }
+    reset() {
+        this.angle = Math.random() * Math.PI * 2;
+        this.radius = Math.random() * 200 + 50;
+        this.z = Math.random() * depth;
+        this.speed = 2 + Math.random() * 3;
+        this.size = 2 + Math.random() * 2;
+        this.color = `hsl(${Math.random()*360}, 80%, 60%)`;
+    }
+    update() {
+        this.z -= this.speed;
+        if(this.z <= 1){
+            this.reset();
+            this.z = depth;
+        }
+    }
+    draw() {
+        const scale = 500 / (this.z + 1);
+        const x = Math.cos(this.angle) * this.radius * scale + centerX;
+        const y = Math.sin(this.angle) * this.radius * scale + centerY;
+
+        ctx.beginPath();
+        ctx.arc(x, y, this.size * scale * 0.1, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    }
+}
+
+// Initialize Particles
+for(let i=0; i<numParticles; i++){
+    tunnelParticles.push(new Particle());
+}
+
+function animateTunnel() {
+    ctx.fillStyle = "rgba(0,0,0,0.15)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    tunnelParticles.forEach(p => {
+        p.update();
+        p.draw();
+    });
+
+    requestAnimationFrame(animateTunnel);
+}
+
+animateTunnel();
+
+// Resize Handler
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});

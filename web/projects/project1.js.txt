@@ -1,0 +1,68 @@
+// Smooth scroll
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
+// Hero text animation
+window.addEventListener("load", () => {
+  const hero = document.querySelector(".hero h1");
+  hero.style.opacity = 0;
+  hero.style.transform = "translateY(40px)";
+  setTimeout(() => {
+    hero.style.transition = "all 1s ease";
+    hero.style.opacity = 1;
+    hero.style.transform = "translateY(0)";
+  }, 300);
+});
+
+// Skill cards animation on scroll
+const skillCards = document.querySelectorAll(".skill-card");
+window.addEventListener("scroll", () => {
+  skillCards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 50) {
+      card.style.transform = "translateY(0)";
+      card.style.opacity = 1;
+      card.style.transition = "all 0.6s ease";
+    }
+  });
+});
+
+// Project Slider
+const slides = document.querySelector(".slides");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+let index = 0;
+
+nextBtn.addEventListener("click", () => {
+  index = (index + 1) % slides.children.length;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+});
+
+prevBtn.addEventListener("click", () => {
+  index = (index - 1 + slides.children.length) % slides.children.length;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+});
+/* Particles.js config */
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 100, density: { enable: true, value_area: 800 } },
+    color: { value: "#DC143C" },  // Crimson particles
+    shape: { type: "circle" },
+    opacity: { value: 0.7, random: true },
+    size: { value: 3, random: true },
+    line_linked: { enable: true, distance: 150, color: "#DC143C", opacity: 0.4, width: 1 },
+    move: { enable: true, speed: 3, direction: "none", out_mode: "out" }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+    modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+  },
+  retina_detect: true
+});

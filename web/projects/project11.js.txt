@@ -1,0 +1,15 @@
+// 3D Tilt
+VanillaTilt.init(document.querySelectorAll(".tilt"), {
+  max: 25,
+  speed: 400,
+  glare: true,
+  "max-glare": 0.4,
+});
+
+// Typing Animation
+const typed = new Typed(".typed", {
+  strings: ["Hi, I'm Pritwish", "Creative Web Engineer", "UI/UX Enthusiast"],
+  typeSpeed: 50,
+  backSpeed: 30,
+  loop: true,
+});

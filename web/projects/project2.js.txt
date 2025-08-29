@@ -1,0 +1,140 @@
+/* ===========================
+   Scroll reveal + 3D hover
+=========================== */
+const revealables = document.querySelectorAll(
+  '.section, .glass-card, .skill-card, .project-card, .cert-card'
+);
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('show');
+  });
+}, { threshold: 0.15 });
+
+revealables.forEach(el => {
+  el.classList.add('hidden');
+  io.observe(el);
+});
+
+// Subtle 3D tilt for cards
+const tiltTargets = document.querySelectorAll('.neon-card, .project-card, .cert-card');
+tiltTargets.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform =
+      `rotateY(${x * 18}deg) rotateX(${-y * 12}deg) translateY(-6px) scale(1.04)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+/* ===========================
+   Matrix Rain Background
+=========================== */
+const canvas = document.getElementById('matrix-canvas');
+const ctx = canvas.getContext('2d', { alpha: true });
+
+let w, h, columns, drops, animationId;
+const glyphs =
+  'アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+-=<>';
+const chars = glyphs.split('');
+
+// Visual settings
+const color = getComputedStyle(document.documentElement)
+  .getPropertyValue('--accent').trim() || '#64ffda';
+const trailAlpha = 0.07;  // lower = longer trails
+const fontSizeBase = 16;  // adjusted by DPR
+const speed = 1;          // multiplier
+
+function resize() {
+  // Handle DPR for crisp rendering
+  const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+  w = Math.floor(window.innerWidth);
+  h = Math.floor(window.innerHeight);
+  canvas.width = Math.floor(w * dpr);
+  canvas.height = Math.floor(h * dpr);
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  const fontSize = Math.max(14, Math.round(fontSizeBase * dpr));
+  ctx.font = `${fontSize}px monospace`;
+
+  columns = Math.floor(w / fontSize);
+  drops = new Array(columns).fill(0).map(() => Math.floor(Math.random() * -50));
+}
+resize();
+window.addEventListener('resize', resize, { passive: true });
+
+function draw() {
+  // Fading trail
+  ctx.fillStyle = `rgba(5,14,27,${trailAlpha})`;
+  ctx.fillRect(0, 0, w, h);
+
+  ctx.fillStyle = color;
+  for (let i = 0; i < drops.length; i++) {
+    const text = chars[Math.floor(Math.random() * chars.length)];
+    const x = i * parseInt(ctx.font, 10);
+    const y = drops[i] * parseInt(ctx.font, 10);
+
+    ctx.fillText(text, x, y);
+
+    // Reset drop randomly after it passes bottom
+    if (y > h && Math.random() > 0.975) {
+      drops[i] = Math.floor(Math.random() * -40);
+    } else {
+      drops[i] += speed;
+    }
+  }
+  animationId = requestAnimationFrame(draw);
+}
+
+// Respect reduced motion & visibility
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let enabled = !prefersReduced;
+
+// Start/stop helpers
+function startMatrix() {
+  if (!animationId) {
+    animationId = requestAnimationFrame(draw);
+    enabled = true;
+    toggleButton.setAttribute('aria-pressed', 'true');
+  }
+}
+function stopMatrix() {
+  if (animationId) {
+    cancelAnimationFrame(animationId);
+    animationId = null;
+  }
+  enabled = false;
+  toggleButton.setAttribute('aria-pressed', 'false');
+}
+
+// Visibility pause (save battery)
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stopMatrix();
+  else if (enabled) startMatrix();
+});
+
+// FX toggle button
+const toggleButton = document.getElementById('fxToggle');
+toggleButton.addEventListener('click', () => {
+  if (animationId) stopMatrix();
+  else startMatrix();
+});
+
+// Auto-start if allowed
+if (enabled) startMatrix();
+
+/* ===========================
+   Smooth anchor scrolling
+=========================== */
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href'))
+      .scrollIntoView({ behavior: 'smooth' });
+  });
+});

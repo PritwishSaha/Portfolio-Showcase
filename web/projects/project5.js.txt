@@ -1,0 +1,62 @@
+// ===== Typing Effect =====
+const typingTarget = document.getElementById("typing");
+const typingPhrases = ["Sakshi Desai", "Engineer", "Designer", "Developer", "Storyteller"];
+let pIndex = 0, cIndex = 0, deleting = false;
+
+function typeLoop() {
+  const phrase = typingPhrases[pIndex];
+  typingTarget.textContent = deleting
+    ? phrase.slice(0, cIndex--)
+    : phrase.slice(0, cIndex++);
+
+  if (!deleting && cIndex === phrase.length + 1) {
+    deleting = true;
+    setTimeout(typeLoop, 900);
+    return;
+  }
+  if (deleting && cIndex < 0) {
+    deleting = false;
+    pIndex = (pIndex + 1) % typingPhrases.length;
+  }
+  setTimeout(typeLoop, deleting ? 70 : 110);
+}
+typeLoop();
+
+// ===== Navbar Scroll Background =====
+const nav = document.querySelector(".nav");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) nav.classList.add("scrolled");
+  else nav.classList.remove("scrolled");
+});
+
+// ===== Mobile Nav Toggle =====
+const toggleBtn = document.querySelector(".nav-toggle");
+const links = document.querySelector(".nav-links");
+toggleBtn.addEventListener("click", () => {
+  links.classList.toggle("open");
+});
+
+// ===== Soft Tilt on Hover (vanilla) =====
+const tilts = document.querySelectorAll(".tilt");
+tilts.forEach(card => {
+  let rect;
+  function handleMove(e){
+    if (!rect) rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rx = ((y - rect.height/2) / rect.height) * -8; // rotateX
+    const ry = ((x - rect.width/2) / rect.width) * 10;  // rotateY
+    card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+  }
+  function reset(){
+    card.style.transform = "";
+    rect = null;
+  }
+  card.addEventListener("mousemove", handleMove);
+  card.addEventListener("mouseleave", reset);
+});
+
+// ===== Smooth anchor close on mobile =====
+document.querySelectorAll(".nav-links a").forEach(a=>{
+  a.addEventListener("click", ()=> links.classList.remove("open"));
+});

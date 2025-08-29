@@ -1,0 +1,56 @@
+// 3D Wireframe Globe
+const canvas=document.getElementById("bg-globe");
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+const renderer=new THREE.WebGLRenderer({canvas,alpha:true});
+renderer.setSize(window.innerWidth,window.innerHeight);
+renderer.setPixelRatio(Math.min(2,window.devicePixelRatio));
+camera.position.z=20;
+
+// Globe
+const globeGeo=new THREE.SphereGeometry(7,48,48);
+const globeMat=new THREE.MeshBasicMaterial({color:0xd4af37,wireframe:true});
+const globe=new THREE.Mesh(globeGeo,globeMat);
+scene.add(globe);
+
+// Stars
+const starsGeo=new THREE.BufferGeometry();
+const starCount=3000;
+const positions=[];
+for(let i=0;i<starCount;i++){
+  positions.push((Math.random()-0.5)*3000);
+  positions.push((Math.random()-0.5)*3000);
+  positions.push((Math.random()-0.5)*3000);
+}
+starsGeo.setAttribute("position",new THREE.Float32BufferAttribute(positions,3));
+const starsMat=new THREE.PointsMaterial({color:0xffffff,size:1});
+const stars=new THREE.Points(starsGeo,starsMat);
+scene.add(stars);
+
+// Animate
+function animate(){
+  requestAnimationFrame(animate);
+  globe.rotation.y+=0.002;
+  stars.rotation.y+=0.0005;
+  renderer.render(scene,camera);
+}
+animate();
+
+// Resize
+window.addEventListener("resize",()=>{
+  camera.aspect=window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth,window.innerHeight);
+});
+
+// Scroll Reveal
+const reveals=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");}});
+},{threshold:0.2});
+reveals.forEach(el=>observer.observe(el));
+
+// Skills Animation
+const skillFills=document.querySelectorAll(".fill");
+function animateSkills(){skillFills.forEach(fill=>{fill.style.width=fill.getAttribute("data-width")||"80%";});}
+window.addEventListener("load",animateSkills);

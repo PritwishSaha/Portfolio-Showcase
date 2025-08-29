@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pritwish | 3D Portfolio + Matrix</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- ===== Matrix Canvas (background) ===== -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===== UI: FX Toggle ===== -->
+  <button class="fx-toggle" id="fxToggle" aria-pressed="true" title="Toggle Matrix Background">
+    <i class="fa-solid fa-circle-nodes"></i>
+  </button>
+
+  <!-- ===== Header / Navbar ===== -->
+  <header>
+    <nav class="navbar glass-card">
+      <div class="logo">🚀 Pritwish</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certs">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <img src="your-photo.jpg" alt="Profile" class="profile-pic floating">
+      <h1>Hello, I'm <span class="highlight">Pritwish</span></h1>
+      <p class="tagline">Creative Developer ✨ Designer 🎨 Innovator 🚀</p>
+      <a href="#contact" class="btn-3d">Hire Me <i class="fa-solid fa-paper-plane"></i></a>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="section glass-card">
+    <h2><i class="fa-solid fa-user"></i> About Me</h2>
+    <p>I’m a passionate developer creating stylish, animated, and 3D web experiences that inspire 🚀</p>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="section">
+    <h2><i class="fa-solid fa-code"></i> Skills</h2>
+    <div class="skill-grid">
+      <div class="skill-card neon-card"><i class="fa-brands fa-html5"></i> HTML</div>
+      <div class="skill-card neon-card"><i class="fa-brands fa-css3-alt"></i> CSS</div>
+      <div class="skill-card neon-card"><i class="fa-brands fa-js"></i> JavaScript</div>
+      <div class="skill-card neon-card"><i class="fa-brands fa-react"></i> React</div>
+      <div class="skill-card neon-card"><i class="fa-brands fa-node-js"></i> Node.js</div>
+      <div class="skill-card neon-card"><i class="fa-solid fa-database"></i> SQL</div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="section glass-card">
+    <h2><i class="fa-solid fa-laptop-code"></i> Projects</h2>
+    <div class="project-grid">
+      <div class="project-card floating">🚀 Portfolio Website</div>
+      <div class="project-card floating">🎨 Design System</div>
+      <div class="project-card floating">⚡ Interactive Dashboard</div>
+    </div>
+  </section>
+
+  <!-- ===== Certificates ===== -->
+  <section id="certs" class="section">
+    <h2><i class="fa-solid fa-award"></i> Certificates</h2>
+    <div class="cert-grid">
+      <div class="cert-card neon-card">✔ Web Dev Certification</div>
+      <div class="cert-card neon-card">✔ UI/UX Certification</div>
+      <div class="cert-card neon-card">✔ DSA Certification</div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="section glass-card">
+    <h2><i class="fa-solid fa-envelope"></i> Get in Touch</h2>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-comment"></i>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn-3d">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+    <div class="contact-links">
+      <a href="mailto:youremail@example.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/yourprofile" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 Pritwish | Made with ❤️ and 🚀</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+// Abstract Smoke Effect
+const canvas = document.getElementById("smokeCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = canvas.height + Math.random() * 100;
+    this.size = Math.random() * 5 + 2;
+    this.speedY = Math.random() * 1 + 0.5;
+    this.alpha = Math.random() * 0.3 + 0.2;
+  }
+  update() {
+    this.y -= this.speedY;
+    if (this.y < -this.size) {
+      this.y = canvas.height + this.size;
+      this.x = Math.random() * canvas.width;
+    }
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255, 215, 0, ${this.alpha})`;
+    ctx.shadowColor = "#FFD700";
+    ctx.shadowBlur = 20;
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function init() {
+  particles = [];
+  for (let i = 0; i < 120; i++) {
+    particles.push(new Particle());
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+  requestAnimationFrame(animate);
+}
+
+init();
+animate();
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  init();
+});

@@ -1,0 +1,65 @@
+/* ================= GLOBAL ================= */
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#fdf7f0,#e3d5c2);color:#2d1b0f;overflow-x:hidden;}
+a{text-decoration:none;color:#2d1b0f;transition:.3s;}
+a:hover{color:#d4af37;text-shadow:0 0 12px #d4af37;}
+.gold{color:#d4af37;}
+
+/* ================= CANVAS ================= */
+#bg-globe{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;}
+
+/* ================= HEADER ================= */
+.header{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border-bottom:2px solid #d4af37;position:sticky;top:0;z-index:10;}
+.logo{font-size:22px;font-weight:bold;}
+.nav a{margin:0 12px;font-weight:500;position:relative;}
+.nav a::after{content:"";position:absolute;bottom:-5px;left:0;width:0;height:2px;background:#d4af37;transition:.3s;}
+.nav a:hover::after{width:100%;}
+
+/* ================= HERO ================= */
+.hero{text-align:center;padding:100px 20px;}
+.hero-card{max-width:600px;margin:auto;}
+.avatar-frame{width:160px;height:160px;margin:0 auto 15px;border-radius:50%;border:4px solid #d4af37;overflow:hidden;box-shadow:0 0 30px rgba(212,175,55,0.4);}
+.avatar{width:100%;border-radius:50%;transform:scale(1.05);transition:transform .4s;}
+.avatar:hover{transform:scale(1.15) rotate(3deg);}
+.hero h2{font-size:48px;margin-bottom:15px;}
+.hero p{font-size:20px;margin-bottom:15px;}
+.social-icons a{margin:0 10px;font-size:1.8rem;color:#d4af37;transition:.3s;}
+.social-icons a:hover{transform:scale(1.2);color:#2d1b0f;text-shadow:0 0 12px #d4af37;}
+
+/* ================= SECTIONS ================= */
+.section{padding:80px 15%;position:relative;}
+.section h2{font-size:34px;margin-bottom:25px;background:linear-gradient(90deg,#d4af37,#e3c89f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.section h2 i{margin-right:10px;font-size:1.2em;vertical-align:middle;}
+
+/* ================= CARDS ================= */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.card{background:rgba(255,255,255,0.15);backdrop-filter:blur(12px);padding:20px;border-radius:18px;border:1px solid rgba(212,175,55,0.5);box-shadow:0 8px 20px rgba(0,0,0,0.25);transition:transform .4s,box-shadow .4s;}
+.card:hover{transform:translateY(-12px) rotateX(5deg) rotateY(5deg);box-shadow:0 12px 30px rgba(212,175,55,0.6);border:1px solid rgba(212,175,55,0.8);}
+
+/* ================= SKILLS ================= */
+.skills{display:grid;gap:15px;}
+.skill{display:flex;flex-direction:column;margin:10px 0;}
+.skill span{font-weight:600;margin-bottom:4px;}
+.skill i{margin-right:8px;color:#d4af37;}
+.bar{width:100%;height:10px;background:#ddd;border-radius:5px;overflow:hidden;}
+.fill{height:100%;background:#d4af37;border-radius:5px;width:0;transition:width 1.2s ease-in-out;}
+
+/* ================= LISTS ================= */
+ul{list-style:none;padding-left:20px;}
+ul li{margin:10px 0;position:relative;}
+ul li::before{content:"◆";color:#d4af37;position:absolute;left:0;}
+
+/* ================= FOOTER ================= */
+.footer{text-align:center;padding:20px;background:rgba(255,255,255,0.1);border-top:2px solid #d4af37;margin-top:40px;}
+
+/* ================= REVEAL ================= */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:768px){
+  .hero h2{font-size:38px;}
+  .section{padding:60px 8%;}
+  .header{flex-direction:column;gap:12px;padding:12px 20px;}
+  .nav a{margin:6px;}
+}

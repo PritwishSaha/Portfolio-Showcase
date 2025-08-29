@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Engineering Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Particles.js library -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <!-- PARTICLES BACKGROUND -->
+  <div id="particles-js"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Engi<span>Portfolio</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="your-photo.jpg" alt="Profile" class="profile-pic"/>
+    <h1>Hello, I’m <span>Your Name</span></h1>
+    <p>An Engineering Student | Developer | Innovator</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn">Hire Me</a>
+      <a href="resume.pdf" class="btn alt" download>Download CV</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I am an engineering student passionate about solving problems with technology. 
+      I love designing 3D interfaces, coding scalable apps, and experimenting with electronics. 
+      My goal is to merge innovation with engineering for real-world solutions.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fa-solid fa-code"></i><p>Programming (C, C++, Python, Java)</p></div>
+      <div class="skill-card"><i class="fa-solid fa-laptop-code"></i><p>Web Development</p></div>
+      <div class="skill-card"><i class="fa-solid fa-microchip"></i><p>Electronics & Circuits</p></div>
+      <div class="skill-card"><i class="fa-solid fa-database"></i><p>Database Management</p></div>
+      <div class="skill-card"><i class="fa-solid fa-robot"></i><p>AI & Machine Learning</p></div>
+      <div class="skill-card"><i class="fa-solid fa-lightbulb"></i><p>Problem Solving</p></div>
+    </div>
+  </section>
+
+  <!-- PROJECT SLIDER -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="slider">
+      <div class="slides">
+        <div class="project-card active">
+          <h3>Smart Irrigation System</h3>
+          <p>Automated water supply using IoT sensors.</p>
+        </div>
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>A 3D-styled interactive portfolio.</p>
+        </div>
+        <div class="project-card">
+          <h3>AI Chatbot</h3>
+          <p>A Python chatbot using NLP to answer queries.</p>
+        </div>
+        <div class="project-card">
+          <h3>Robotics Arm</h3>
+          <p>A robotic arm controlled with Arduino + sensors.</p>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <span class="prev"><i class="fa-solid fa-chevron-left"></i></span>
+        <span class="next"><i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certs" class="certs">
+    <h2>Certificates</h2>
+    <div class="cert-grid">
+      <div class="cert-card">Machine Learning (Coursera)</div>
+      <div class="cert-card">Web Development Bootcamp</div>
+      <div class="cert-card">IoT & Embedded Systems</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <footer id="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s connect and build something amazing!</p>
+    <div class="socials">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="mailto:your@email.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+    <p class="copy">© 2025 Your Name | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

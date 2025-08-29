@@ -1,0 +1,60 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const sections = document.querySelectorAll('section');
+
+    // Smooth scroll
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const sectionId = this.getAttribute('href');
+            const targetSection = document.querySelector(sectionId);
+            if (targetSection) {
+                e.preventDefault();
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Active link highlight
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const currentSectionId = '#' + entry.target.id;
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === currentSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.6 });
+    sections.forEach(section => observer.observe(section));
+
+    // Contact form
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("✅ Thank you! Your message has been sent.");
+            contactForm.reset();
+        });
+    }
+
+    // Fade-in effect on scroll
+    const fadeElements = document.querySelectorAll('section, .service-item, .portfolio-item');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, { threshold: 0.2 });
+
+    fadeElements.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all 0.8s ease";
+        fadeObserver.observe(el);
+    });
+});

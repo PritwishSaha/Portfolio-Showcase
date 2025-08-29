@@ -1,0 +1,20 @@
+// Reveal tagline with glow after sweep
+const tl = document.querySelector('.tagline');
+if (tl){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        tl.classList.add('is-revealed');
+        io.unobserve(tl);
+      }
+    });
+  }, { threshold: .6 });
+  io.observe(tl);
+}
+
+// Flip projects handled by CSS hover
+// Contact form demo
+document.querySelector('.contact-form').addEventListener('submit', e=>{
+  e.preventDefault();
+  alert("Message Sent!");
+});

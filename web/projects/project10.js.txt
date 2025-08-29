@@ -1,0 +1,30 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const typewriterElement = document.querySelector('.typewriter');
+    const professions = ["Software Engineer", "Web Developer", "Data Scientist", "Full Stack Developer"];
+    let professionIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentProfession = professions[professionIndex];
+        const currentText = currentProfession.substring(0, charIndex);
+
+        typewriterElement.textContent = currentText;
+
+        if (!isDeleting && charIndex < currentProfession.length) {
+            charIndex++;
+            setTimeout(type, 100);
+        } else if (isDeleting && charIndex > 0) {
+            charIndex--;
+            setTimeout(type, 50);
+        } else {
+            isDeleting = !isDeleting;
+            if (!isDeleting) {
+                professionIndex = (professionIndex + 1) % professions.length;
+            }
+            setTimeout(type, 1000);
+        }
+    }
+
+    type();
+});

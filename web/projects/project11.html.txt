@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pritwish | Engineering Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header / Hero -->
+    <header class="glass tilt hero">
+      <img src="your-photo.jpg" alt="Pritwish Photo" class="profile-photo">
+      <h1><span class="typed"></span></h1>
+      <p>Creative Web Engineer | UI/UX Designer</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+      </div>
+    </header>
+
+    <!-- About Me -->
+    <section class="glass tilt card" id="about">
+      <h2>About Me</h2>
+      <p>I specialize in building stylish, animated, and interactive web experiences using modern design trends like glassmorphism, parallax, and 3D effects.</p>
+    </section>
+
+    <!-- Education -->
+    <section class="glass tilt card" id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Bachelor of Engineering (B.E.)</strong> - Computer Science, ABC University (2016-2020)</li>
+        <li><strong>Diploma in Web Development</strong> - XYZ Institute (2015-2016)</li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section class="glass tilt card" id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill"><i class="fas fa-code"></i> HTML/CSS</div>
+        <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="skill"><i class="fab fa-react"></i> ReactJS</div>
+        <div class="skill"><i class="fas fa-database"></i> MongoDB</div>
+        <div class="skill"><i class="fab fa-node-js"></i> NodeJS</div>
+        <div class="skill"><i class="fas fa-mobile-alt"></i> Responsive Design</div>
+      </div>
+    </section>
+
+    <!-- Projects / Portfolio -->
+    <section class="glass tilt card" id="portfolio">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card tilt">
+          <h3>3D Portfolio</h3>
+          <p>Animated personal site with tilt effects and scroll reveals.</p>
+        </div>
+        <div class="project-card tilt">
+          <h3>UI Kit</h3>
+          <p>Glassmorphism components built with HTML/CSS.</p>
+        </div>
+        <div class="project-card tilt">
+          <h3>E-commerce Site</h3>
+          <p>Full-stack shopping platform using React and NodeJS.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="glass tilt card" id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="script.js"></script>
+</body>
+</html>

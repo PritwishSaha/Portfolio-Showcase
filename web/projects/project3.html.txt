@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Portfolio</title>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Canvas for 3D Globe -->
+  <canvas id="bg-globe"></canvas>
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="logo">My Engineering Portfolio</h1>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero reveal">
+    <div class="hero-card">
+      <div class="avatar-frame">
+        <img src="your-photo.jpg" alt="Your Name" class="avatar">
+      </div>
+      <h2><i class="fas fa-rocket gold"></i>Hello, I'm <span class="gold">Your Name</span></h2>
+      <p>Engineer | Developer | Innovator</p>
+      <div class="social-icons">
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section reveal">
+    <h2><i class="fas fa-user-circle gold"></i> About Me</h2>
+    <p>I’m a passionate engineer specializing in building immersive web and engineering solutions with style and precision.</p>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section reveal">
+    <h2><i class="fas fa-graduation-cap gold"></i> Education</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-university gold"></i> B.Tech in Mechanical Engineering, XYZ University (2020-2024)</div>
+      <div class="card"><i class="fas fa-school gold"></i> High School, ABC School (2018)</div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section reveal">
+    <h2><i class="fas fa-tools gold"></i> Skills</h2>
+    <div class="skills">
+      <div class="skill"><i class="fas fa-cube gold"></i> AutoCAD
+        <div class="bar"><div class="fill" data-width="90%"></div></div>
+      </div>
+      <div class="skill"><i class="fas fa-calculator gold"></i> MATLAB
+        <div class="bar"><div class="fill" data-width="75%"></div></div>
+      </div>
+      <div class="skill"><i class="fab fa-python gold"></i> Python
+        <div class="bar"><div class="fill" data-width="80%"></div></div>
+      </div>
+      <div class="skill"><i class="fas fa-project-diagram gold"></i> Project Management
+        <div class="bar"><div class="fill" data-width="85%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section reveal">
+    <h2><i class="fas fa-lightbulb gold"></i> Projects</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-seedling gold"></i> Smart Irrigation System</div>
+      <div class="card"><i class="fas fa-drone gold"></i> 3D Printed Drone</div>
+      <div class="card"><i class="fas fa-industry gold"></i> Automated Manufacturing Line</div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="section reveal">
+    <h2><i class="fas fa-certificate gold"></i> Certifications</h2>
+    <ul>
+      <li>Certified SolidWorks Professional</li>
+      <li>Google Data Analytics Certificate</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section reveal">
+    <h2><i class="fas fa-envelope gold"></i> Contact</h2>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer reveal">
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
